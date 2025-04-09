@@ -1,17 +1,13 @@
 package br.dev.gabriel.tabuada;
 
-import br.dev.gabriel.tabuada.model.Tabuada;
+import br.dev.gabriel.tabuada.gui.TelaTabuada;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Tabuada tabuada = new Tabuada();
+		TelaTabuada tela = new TelaTabuada();
 		
-		tabuada.setMultiplicando(2);
-		tabuada.setMinimoMultiplicador(1);
-		tabuada.setMaximoMultiplicador(90);
-		tabuada.mostrarTabuada();
+		tela.criarTela("Tabuada");
 		
-		System.out.println(tabuada.getMultiplicando());
 	}
 }
