@@ -1,6 +1,11 @@
 package br.dev.gabriel.tabuada.gui;
 
 import java.awt.Container;
+<<<<<<< HEAD
+=======
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+>>>>>>> a86f7df (Painel e scroll adicionados)
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,6 +14,11 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+<<<<<<< HEAD
+=======
+import br.dev.gabriel.tabuada.model.Tabuada;
+
+>>>>>>> a86f7df (Painel e scroll adicionados)
 public class TelaTabuada {
 	private JLabel labelMultiplicando;
 	private JLabel labelMinMultiplicador;
@@ -70,6 +80,16 @@ public class TelaTabuada {
 		buttonLimpar.setText("Limpar...");
 		buttonLimpar.setBounds(130, 140, 100, 30);
 
+<<<<<<< HEAD
+=======
+		// Criar JList na tela
+		listTabuada = new JList();
+
+		// Criar o ScrollPane
+		scrollTabuada = new JScrollPane(listTabuada);
+		scrollTabuada.setBounds(20, 190, 210, 300);
+
+>>>>>>> a86f7df (Painel e scroll adicionados)
 		container.add(labelMultiplicando);
 		container.add(labelMinMultiplicador);
 		container.add(labelMaxMultiplicador);
@@ -78,6 +98,37 @@ public class TelaTabuada {
 		container.add(textMaxMultiplicador);
 		container.add(buttonCalcular);
 		container.add(buttonLimpar);
+<<<<<<< HEAD
+=======
+		container.add(scrollTabuada);
+
+		// Adicionar ouvintes de ação aos botões
+		buttonCalcular.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				String multiplicando = textMultiplicando.getText();
+				String min = textMinMultiplicador.getText();
+				String max = textMaxMultiplicador.getText();
+
+				Tabuada tabuada = new Tabuada();
+
+				double multiplicandoDouble = Double.parseDouble(multiplicando);
+				double minimoMultiplicandoDouble = Double.parseDouble(min);
+				double maximoMultiplicandoDouble = Double.parseDouble(max);
+
+				tabuada.setMultiplicando(multiplicandoDouble);
+				tabuada.setMinimoMultiplicador(minimoMultiplicandoDouble);
+				tabuada.setMaximoMultiplicador(maximoMultiplicandoDouble);
+
+				String[] tabuadaResult = tabuada.mostrarTabuada();
+				listTabuada.setListData(tabuadaResult);
+
+			}
+		});
+
+>>>>>>> a86f7df (Painel e scroll adicionados)
 		tela.setVisible(true);
 	}
 
